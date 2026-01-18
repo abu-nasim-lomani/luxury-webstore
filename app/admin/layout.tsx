@@ -12,6 +12,10 @@ import {
     Menu,
     X,
     Home,
+    Sparkles,
+    FolderTree,
+    ImageIcon,
+    MessageSquare,
 } from "lucide-react";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
@@ -19,7 +23,11 @@ import { cn } from "@/lib/utils";
 const navItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/admin" },
     { icon: Package, label: "Products", href: "/admin/products" },
+    { icon: FolderTree, label: "Categories", href: "/admin/categories" },
+    { icon: ImageIcon, label: "Hero Slides", href: "/admin/hero-slides" },
+    { icon: Sparkles, label: "Hero Showcase", href: "/admin/hero-showcase" },
     { icon: ShoppingCart, label: "Orders", href: "/admin/orders" },
+    { icon: MessageSquare, label: "Support", href: "/admin/support" },
     { icon: Users, label: "Customers", href: "/admin/customers" },
     { icon: Settings, label: "Settings", href: "/admin/settings" },
 ];
