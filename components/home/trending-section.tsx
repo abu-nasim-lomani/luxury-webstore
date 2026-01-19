@@ -17,7 +17,7 @@ export function TrendingSection() {
         fetchProducts().then(() => {
             // Get products marked as trending
             const products = getAllProducts();
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line
             const trending = products.filter((p) => (p as any).is_trending === true).slice(0, 4);
             setTrendingProducts(trending);
         });

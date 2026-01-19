@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Upload, X, Plus } from "lucide-react";
 import { useAdminProducts } from "@/store/use-admin-products";
 import { toast } from "sonner";
@@ -176,7 +177,7 @@ export default function NewProductPage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {images.map((image, index) => (
                             <div key={index} className="relative aspect-square bg-secondary rounded-lg overflow-hidden group">
-                                <img src={image} alt={`Product ${index + 1}`} className="w-full h-full object-cover" />
+                                <Image unoptimized src={image} alt={`Product ${index + 1}`} fill className="object-cover" />
                                 <button
                                     type="button"
                                     onClick={() => handleRemoveImage(index)}

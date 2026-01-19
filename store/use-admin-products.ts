@@ -6,23 +6,7 @@ const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-interface Product {
-    id: string;
-    name: string;
-    slug: string;
-    description: string;
-    price: number;
-    images: string[];
-    category_id: string;
-    specifications: Record<string, unknown>;
-    stock: number;
-    featured: boolean;
-    meta_title?: string;
-    meta_description?: string;
-    keywords?: string;
-    created_at: string;
-    updated_at: string;
-}
+import { Product } from '@/lib/types';
 
 interface AdminProductsStore {
     products: Product[];

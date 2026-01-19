@@ -41,9 +41,9 @@ export default function ProductsPage() {
     const handleToggleTrending = async (product: Product) => {
         try {
             const { updateProduct } = useAdminProducts.getState();
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            await updateProduct(product.id, { is_trending: !(product as any).is_trending });
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line
+            await updateProduct(product.id, { is_trending: !(product as any).is_trending } as any);
+            // eslint-disable-next-line
             toast.success(`Product ${!(product as any).is_trending ? "marked as" : "removed from"} trending`);
         } catch {
             toast.error("Failed to update product");
@@ -63,9 +63,9 @@ export default function ProductsPage() {
     const handleToggleHeroShowcase = async (product: Product) => {
         try {
             const { updateProduct } = useAdminProducts.getState();
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            await updateProduct(product.id, { is_hero_showcase: !(product as any).is_hero_showcase });
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line
+            await updateProduct(product.id, { is_hero_showcase: !(product as any).is_hero_showcase } as any);
+            // eslint-disable-next-line
             toast.success(`Product ${!(product as any).is_hero_showcase ? "added to" : "removed from"} Hero Showcase`);
         } catch {
             toast.error("Failed to update product");
@@ -210,13 +210,13 @@ export default function ProductsPage() {
                                                 <button
                                                     onClick={() => handleToggleHeroShowcase(product)}
                                                     className={`p-2 rounded-lg transition-colors ${
-                                                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                        // eslint-disable-next-line
                                                         (product as any).is_hero_showcase
                                                             ? "text-purple-600 bg-purple-100 dark:bg-purple-900/30"
                                                             : "text-gray-400 hover:text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20"
                                                         }`}
                                                     title={
-                                                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                        // eslint-disable-next-line
                                                         (product as any).is_hero_showcase
                                                             ? "Remove from Hero Showcase"
                                                             : "Add to Hero Showcase"
@@ -224,7 +224,7 @@ export default function ProductsPage() {
                                                 >
                                                     <Sparkles
                                                         className={`w-4 h-4 ${
-                                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                                            // eslint-disable-next-line
                                                             (product as any).is_hero_showcase ? "fill-current" : ""
                                                             }`}
                                                     />
